@@ -1,0 +1,206 @@
+/* ==========================================================================
+   Color Palette:
+   1. Primary Dark: #0f172a (Slate Navy)
+   2. Accent:       #0d9488 (Teal Cyan)
+   3. Light Neutral:#f8fafc (Ice Gray)
+   ========================================================================== */
+
+:root {
+    --primary: #0f172a;
+    --accent: #0d9488;
+    --bg-light: #f8fafc;
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --card-bg: #ffffff;
+    --border: #cbd5e1;
+    --radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, sans-serif;
+    color: var(--text-dark);
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--primary);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.logo span { color: var(--accent); }
+
+.nav-menu { display: flex; gap: 1.5rem; }
+
+.nav-link {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.nav-link:hover, .nav-link.active { color: #ffffff; }
+
+/* Hero & Header */
+.hero {
+    background-color: var(--primary);
+    color: #ffffff;
+    padding: 4rem 0;
+    text-align: center;
+}
+
+.hero p { color: #94a3b8; max-width: 600px; margin: 0.5rem auto 0; }
+
+.module-header {
+    margin-top: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border);
+}
+
+.module-header p { color: var(--text-muted); }
+
+/* Roadmap Cards */
+.section { padding: 3rem 0; }
+.bg-light { background-color: var(--bg-light); }
+.section-title { margin-bottom: 1.5rem; font-size: 1.6rem; color: var(--primary); }
+
+.roadmap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.roadmap-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s;
+}
+
+.roadmap-card:hover:not(.disabled) { transform: translateY(-4px); }
+.roadmap-card.disabled { opacity: 0.6; cursor: not-allowed; }
+
+.step-tag {
+    background: var(--bg-light);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 0.2rem 0.5rem;
+    width: fit-content;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.card-link { color: var(--accent); font-weight: 600; margin-top: 1rem; }
+
+/* Learn-Try-See Accordions */
+.accordion {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.accordion-header {
+    background-color: var(--bg-light);
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-content {
+    display: none;
+    padding: 1.25rem;
+    background-color: #ffffff;
+}
+
+.accordion.active .accordion-content { display: block; }
+
+.learn-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
+}
+
+.learn-col h4 { margin-bottom: 0.5rem; font-size: 0.95rem; }
+
+/* Code Block & Output */
+.code-block {
+    position: relative;
+    background-color: var(--primary);
+    color: #f8fafc;
+    padding: 1rem;
+    border-radius: var(--radius);
+}
+
+.code-block pre code { font-family: monospace; font-size: 0.85rem; }
+
+.copy-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: #334155;
+    color: #fff;
+    border: none;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.7rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.output-box {
+    background-color: var(--bg-light);
+    border-left: 4px solid var(--accent);
+    padding: 1rem;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 0.85rem;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--primary);
+    color: #94a3b8;
+    padding: 1.5rem 0;
+    font-size: 0.85rem;
+    margin-top: 3rem;
+}
+
+.text-center { text-align: center; }

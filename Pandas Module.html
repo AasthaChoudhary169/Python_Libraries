@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandas Module | PyData Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sticky Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">PyData <span>StarterKit</span></a>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">Dashboard</a>
+                <a href="numpy.html" class="nav-link">NumPy</a>
+                <a href="pandas.html" class="nav-link active">Pandas</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container module-header">
+        <h1>Module 2: Pandas (Data Manipulation)</h1>
+        <p>Pandas introduces DataFrames (structured tables with rows and columns), making data cleaning, filtering, and aggregation simple.</p>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Core Operations (Click to Expand)</h2>
+
+            <!-- Concept 1 Accordion -->
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span>1. Handling Missing Data (`fillna`)</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="learn-grid">
+                        <div class="learn-col">
+                            <h4>💡 Why & When to Use</h4>
+                            <p>Real-world datasets have missing entries (`NaN`). Use <code>fillna()</code> to replace missing values with average numbers so models don't crash.</p>
+                        </div>
+                        <div class="learn-col">
+                            <h4>💻 Python Syntax</h4>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre><code>import pandas as pd
+import numpy as np
+
+# Sample dataset with missing value
+data = {'Name': ['Alice', 'Bob', 'Charlie'],
+        'Experience': [2.0, np.nan, 4.0]}
+df = pd.DataFrame(data)
+
+# Replace missing values with column mean
+mean_exp = df['Experience'].mean()
+df['Experience'] = df['Experience'].fillna(mean_exp)
+print(df)</code></pre>
+                            </div>
+                        </div>
+                        <div class="learn-col">
+                            <h4>📊 Output Result</h4>
+                            <div class="output-box">
+                                <code>Name &nbsp;&nbsp;&nbsp;Experience<br>Alice &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2.0<br>Bob &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3.0<br>Charlie &nbsp;&nbsp;4.0</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Concept 2 Accordion -->
+            <div class="accordion">
+                <div class="accordion-header">
+                    <span>2. Aggregating Metrics (`groupby`)</span>
+                    <span class="icon">+</span>
+                </div>
+                <div class="accordion-content">
+                    <div class="learn-grid">
+                        <div class="learn-col">
+                            <h4>💡 Why & When to Use</h4>
+                            <p>Use <code>groupby()</code> to split your dataset into categories (e.g., Departments) and calculate average salaries or metrics per department.</p>
+                        </div>
+                        <div class="learn-col">
+                            <h4>💻 Python Syntax</h4>
+                            <div class="code-block">
+                                <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+<pre><code>import pandas as pd
+
+data = {'Dept': ['DS', 'DS', 'Eng'],
+        'Salary': [70000, 80000, 65000]}
+df = pd.DataFrame(data)
+
+# Calculate mean salary per Dept
+result = df.groupby('Dept')['Salary'].mean()
+print(result)</code></pre>
+                            </div>
+                        </div>
+                        <div class="learn-col">
+                            <h4>📊 Output Result</h4>
+                            <div class="output-box">
+                                <code>Dept<br>DS &nbsp;&nbsp;&nbsp;&nbsp;75000<br>Eng &nbsp;&nbsp;&nbsp;65000</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2026 PyData StarterKit — Built for Freshers.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

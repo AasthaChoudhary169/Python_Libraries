@@ -1,0 +1,7 @@
+pydata-study-portal/
+│
+├── index.html        # Dashboard, Roadmap & Module Hub
+├── numpy.html        # Dedicated NumPy Micro-Learning Module
+├── pandas.html       # Dedicated Pandas Micro-Learning Module
+├── style.css         # Shared Design System (3-Color Palette & Accordions)
+└── script.js        # Interactive Accordion, Copy-Code & Progress Logic
