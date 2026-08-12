@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seaborn Module | PyData Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header class="navbar">
+<div class="container nav-container">
+<a href="index.html" class="logo">PyData <span>StarterKit</span></a>
+<nav class="nav-menu">
+<a href="index.html" class="nav-link">Dashboard</a>
+<a href="numpy.html" class="nav-link">NumPy</a>
+<a href="pandas.html" class="nav-link">Pandas</a>
+<a href="matplotlib.html" class="nav-link">Matplotlib</a>
+<a href="seaborn.html" class="nav-link active">Seaborn</a>
+</nav>
+</div>
+</header>
+
+<div class="container module-header">
+<h1>Module 4: Seaborn (Statistical Visualization)</h1>
+<p>Seaborn is a statistical visualization library built on Matplotlib that makes attractive and informative data visualizations easier to create.</p>
+</div>
+
+<section class="section">
+<div class="container">
+<h2 class="section-title">Core Concepts (Click to Expand)</h2>
+
+<div class="accordion">
+<div class="accordion-header"><span>1. Introduction to Seaborn</span><span class="icon">+</span></div>
+<div class="accordion-content"><div class="learn-grid">
+<div class="learn-col"><h4>💡 Why & When to Use</h4><p>Use Seaborn when you want concise syntax and statistical plots that work naturally with Pandas DataFrames.</p></div>
+<div class="learn-col"><h4>💻 Python Syntax</h4><div class="code-block"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+
+sns.scatterplot(data=tips, x="total_bill", y="tip")
+plt.show()</code></pre></div></div>
+<div class="learn-col"><h4>📊 Output Result</h4><div class="output-box"><code>A scatter plot showing the relationship between total bill and tip.</code></div></div>
+</div></div>
+</div>
+
+<div class="accordion">
+<div class="accordion-header"><span>2. Count Plot</span><span class="icon">+</span></div>
+<div class="accordion-content"><div class="learn-grid">
+<div class="learn-col"><h4>💡 Why & When to Use</h4><p>Use a count plot to show how many observations belong to each category.</p></div>
+<div class="learn-col"><h4>💻 Python Syntax</h4><div class="code-block"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+
+sns.countplot(data=tips, x="day")
+plt.title("Number of Records by Day")
+plt.show()</code></pre></div></div>
+<div class="learn-col"><h4>📊 Output Result</h4><div class="output-box"><code>Bars showing the number of observations for each day.</code></div></div>
+</div></div>
+</div>
+
+<div class="accordion">
+<div class="accordion-header"><span>3. Bar Plot</span><span class="icon">+</span></div>
+<div class="accordion-content"><div class="learn-grid">
+<div class="learn-col"><h4>💡 Why & When to Use</h4><p>Use a bar plot to compare an estimated numerical value across categories. Seaborn can also display confidence intervals.</p></div>
+<div class="learn-col"><h4>💻 Python Syntax</h4><div class="code-block"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+
+sns.barplot(data=tips, x="day", y="total_bill")
+plt.title("Average Bill by Day")
+plt.show()</code></pre></div></div>
+<div class="learn-col"><h4>📊 Output Result</h4><div class="output-box"><code>Bars comparing the average total bill across days.</code></div></div>
+</div></div>
+</div>
+
+<div class="accordion">
+<div class="accordion-header"><span>4. Box Plot</span><span class="icon">+</span></div>
+<div class="accordion-content"><div class="learn-grid">
+<div class="learn-col"><h4>💡 Why & When to Use</h4><p>Use a box plot to understand the distribution, median, quartiles, spread, and potential outliers of numerical data.</p></div>
+<div class="learn-col"><h4>💻 Python Syntax</h4><div class="code-block"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+
+sns.boxplot(data=tips, x="day", y="total_bill")
+plt.title("Bill Distribution by Day")
+plt.show()</code></pre></div></div>
+<div class="learn-col"><h4>📊 Output Result</h4><div class="output-box"><code>Box plots showing the distribution and possible outliers for each day.</code></div></div>
+</div></div>
+</div>
+
+<div class="accordion">
+<div class="accordion-header"><span>5. Histogram and KDE Plot</span><span class="icon">+</span></div>
+<div class="accordion-content"><div class="learn-grid">
+<div class="learn-col"><h4>💡 Why & When to Use</h4><p>Use a histogram with KDE to see both the frequency distribution and a smoothed estimate of the data distribution.</p></div>
+<div class="learn-col"><h4>💻 Python Syntax</h4><div class="code-block"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+
+sns.histplot(data=tips, x="total_bill", kde=True)
+plt.title("Total Bill Distribution")
+plt.show()</code></pre></div></div>
+<div class="learn-col"><h4>📊 Output Result</h4><div class="output-box"><code>A histogram with a KDE curve showing the shape of the bill distribution.</code></div></div>
+</div></div>
+</div>
+
+<div class="accordion">
+<div class="accordion-header"><span>6. Scatter Plot with Hue</span><span class="icon">+</span></div>
+<div class="accordion-content"><div class="learn-grid">
+<div class="learn-col"><h4>💡 Why & When to Use</h4><p>Use <code>hue</code> to divide observations into categories using different visual groups.</p></div>
+<div class="learn-col"><h4>💻 Python Syntax</h4><div class="code-block"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+
+sns.scatterplot(
+    data=tips,
+    x="total_bill",
+    y="tip",
+    hue="sex"
+)
+plt.title("Bill vs Tip by Gender")
+plt.show()</code></pre></div></div>
+<div class="learn-col"><h4>📊 Output Result</h4><div class="output-box"><code>Points are visually grouped according to the sex category.</code></div></div>
+</div></div>
+</div>
+
+<div class="accordion">
+<div class="accordion-header"><span>7. Heatmap and Correlation Matrix</span><span class="icon">+</span></div>
+<div class="accordion-content"><div class="learn-grid">
+<div class="learn-col"><h4>💡 Why & When to Use</h4><p>Use a heatmap to display numerical relationships in matrix form. Correlation heatmaps are especially useful during EDA.</p></div>
+<div class="learn-col"><h4>💻 Python Syntax</h4><div class="code-block"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+corr = tips.select_dtypes("number").corr()
+
+sns.heatmap(corr, annot=True)
+plt.title("Correlation Matrix")
+plt.show()</code></pre></div></div>
+<div class="learn-col"><h4>📊 Output Result</h4><div class="output-box"><code>A matrix where correlation values are displayed for pairs of numerical variables.</code></div></div>
+</div></div>
+</div>
+
+<div class="accordion">
+<div class="accordion-header"><span>8. Pair Plot</span><span class="icon">+</span></div>
+<div class="accordion-content"><div class="learn-grid">
+<div class="learn-col"><h4>💡 Why & When to Use</h4><p>Use a pair plot during exploratory data analysis to inspect relationships and distributions across multiple numerical variables at once.</p></div>
+<div class="learn-col"><h4>💻 Python Syntax</h4><div class="code-block"><button class="copy-btn" onclick="copyCode(this)">Copy</button><pre><code>import seaborn as sns
+import matplotlib.pyplot as plt
+
+tips = sns.load_dataset("tips")
+
+sns.pairplot(
+    tips,
+    vars=["total_bill", "tip", "size"],
+    hue="sex"
+)
+plt.show()</code></pre></div></div>
+<div class="learn-col"><h4>📊 Output Result</h4><div class="output-box"><code>A grid of pairwise plots showing relationships and distributions between selected variables.</code></div></div>
+</div></div>
+</div>
+
+</div>
+</section>
+
+<footer class="footer">
+<div class="container text-center">
+<p>&copy; 2026 PyData StarterKit — Built for Freshers.</p>
+</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
